@@ -1,0 +1,2 @@
+CREATE DATABASE Parcial1Db
+GO
