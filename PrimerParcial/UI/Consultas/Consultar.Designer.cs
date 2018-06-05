@@ -33,12 +33,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Imprimirbutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.CriteriocomboBox = new System.Windows.Forms.ComboBox();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
+            this.BuscarConsultabutton = new System.Windows.Forms.Button();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,7 @@
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(121, 21);
             this.FiltrocomboBox.TabIndex = 1;
+            this.FiltrocomboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrocomboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -86,41 +87,23 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Desde";
             // 
-            // Imprimirbutton
+            // DesdedateTimePicker
             // 
-            this.Imprimirbutton.Location = new System.Drawing.Point(42, 415);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(75, 23);
-            this.Imprimirbutton.TabIndex = 5;
-            this.Imprimirbutton.Text = "Imprimir";
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.DesdedateTimePicker.CustomFormat = "dd/MM/yy";
+            this.DesdedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DesdedateTimePicker.Location = new System.Drawing.Point(112, 68);
+            this.DesdedateTimePicker.Name = "DesdedateTimePicker";
+            this.DesdedateTimePicker.Size = new System.Drawing.Size(83, 20);
+            this.DesdedateTimePicker.TabIndex = 7;
             // 
-            // Buscarbutton
+            // HastadateTimePicker
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(493, 15);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
-            this.Buscarbutton.TabIndex = 6;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(112, 68);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(83, 20);
-            this.dateTimePicker1.TabIndex = 7;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(404, 68);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(83, 20);
-            this.dateTimePicker2.TabIndex = 8;
+            this.HastadateTimePicker.CustomFormat = "dd/MM/yy";
+            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.HastadateTimePicker.Location = new System.Drawing.Point(404, 68);
+            this.HastadateTimePicker.Name = "HastadateTimePicker";
+            this.HastadateTimePicker.Size = new System.Drawing.Size(83, 20);
+            this.HastadateTimePicker.TabIndex = 8;
             // 
             // CriteriocomboBox
             // 
@@ -135,8 +118,29 @@
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultadataGridView.Location = new System.Drawing.Point(42, 94);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
-            this.ConsultadataGridView.Size = new System.Drawing.Size(526, 315);
+            this.ConsultadataGridView.Size = new System.Drawing.Size(526, 278);
             this.ConsultadataGridView.TabIndex = 10;
+            // 
+            // BuscarConsultabutton
+            // 
+            this.BuscarConsultabutton.BackgroundImage = global::PrimerParcial.Properties.Resources._104301;
+            this.BuscarConsultabutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BuscarConsultabutton.Location = new System.Drawing.Point(493, 15);
+            this.BuscarConsultabutton.Name = "BuscarConsultabutton";
+            this.BuscarConsultabutton.Size = new System.Drawing.Size(53, 45);
+            this.BuscarConsultabutton.TabIndex = 6;
+            this.BuscarConsultabutton.UseVisualStyleBackColor = true;
+            this.BuscarConsultabutton.Click += new System.EventHandler(this.BuscarConsultabutton_Click);
+            // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.BackgroundImage = global::PrimerParcial.Properties.Resources.print;
+            this.Imprimirbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Imprimirbutton.Location = new System.Drawing.Point(12, 378);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(65, 60);
+            this.Imprimirbutton.TabIndex = 5;
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
             // 
             // Consultar
             // 
@@ -145,9 +149,9 @@
             this.ClientSize = new System.Drawing.Size(615, 450);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.CriteriocomboBox);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.Buscarbutton);
+            this.Controls.Add(this.HastadateTimePicker);
+            this.Controls.Add(this.DesdedateTimePicker);
+            this.Controls.Add(this.BuscarConsultabutton);
             this.Controls.Add(this.Imprimirbutton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -170,9 +174,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Imprimirbutton;
-        private System.Windows.Forms.Button Buscarbutton;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button BuscarConsultabutton;
+        private System.Windows.Forms.DateTimePicker DesdedateTimePicker;
+        private System.Windows.Forms.DateTimePicker HastadateTimePicker;
         private System.Windows.Forms.ComboBox CriteriocomboBox;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
     }
