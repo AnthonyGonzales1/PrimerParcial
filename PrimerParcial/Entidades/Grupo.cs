@@ -14,13 +14,13 @@ namespace PrimerParcial.Entidades
 
             public string Descripcion { get; set; }
 
-            public int Cantidad { get; set; }
+            public float Cantidad { get; set; }
 
             public DateTime Fecha { get; set; }
 
-            public string Gruposs { get; set; }
+            public float Gruposs { get; set; }
 
-            public string Integrantes { get; set; }
+            public float Integrantes { get; set; }
 
             public Grupos()
             {
@@ -28,8 +28,8 @@ namespace PrimerParcial.Entidades
                 Descripcion = string.Empty;
                 Cantidad = 0;
                 Fecha = DateTime.Now;
-                Gruposs = string.Empty;
-                Integrantes = string.Empty;
+                Gruposs = 0;
+                Integrantes = 0;
 
             }
         }

@@ -30,16 +30,16 @@ namespace PrimerParcial.UI.Consultas
                     filtro = x => x.GruposId == id;
                     break;
                 case 1:
-                    filtro = x => x.Descripcion.Contains(CriteriocomboBox.Text) && x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value;
-                    break;
-                case 2:
                     filtro = x => x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value;
                     break;
+                case 2:
+                    filtro = x => x.Descripcion.Contains(CriteriocomboBox.Text) && x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value;
+                    break;
                 case 3:
-                    filtro = x => x.Gruposs.Equals(CriteriocomboBox.Text) && x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value;
+                    filtro = x => x.Cantidad.Equals(CriteriocomboBox.Text) && x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value;
                     break;
                 case 4:
-                    filtro = x => x.Cantidad.Equals(CriteriocomboBox.Text) && x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value;
+                    filtro = x => x.Gruposs.Equals(CriteriocomboBox.Text) && x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value;
                     break;
                 case 5:
                     filtro = x => x.Integrantes.Equals(CriteriocomboBox.Text) && x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value;
@@ -50,11 +50,6 @@ namespace PrimerParcial.UI.Consultas
                
         private void FiltrocomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (FiltrocomboBox.SelectedIndex == 2)
-                CriteriocomboBox.Enabled = false;
-            else
-                CriteriocomboBox.Enabled = true;
-
         }
     }
 }

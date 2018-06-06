@@ -1,2 +1,3 @@
-CREATE DATABASE Parcial1Db
-GO
+/*CREATE DATABASE ParcialUnoDb
+GO*/
+select * from Grupos
