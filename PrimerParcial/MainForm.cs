@@ -36,6 +36,12 @@ namespace PrimerParcial
             PrimerParcial.UI.Consultas.Consultar consultar = new UI.Consultas.Consultar();
             consultar.Show();
         }
+
+        private void detalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrimerParcial.UI.Detalle.Detalle detalle = new UI.Detalle.Detalle();
+            detalle.Show();
+        }
     }
 }
 

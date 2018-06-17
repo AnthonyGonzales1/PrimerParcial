@@ -101,8 +101,8 @@ namespace PrimerParcial.UI.Detalle
                 new GrupoDetalle(
                     id: 0,
                     personaId: (int)PersonasIdcomboBox.SelectedValue,
-                    grupoId: (int)GruposIdnumericUpDown.Value,
-                    cargo: (string)CargotextBox.Text
+                    grupoId: (int)GruposIdnumericUpDown.Value
+                    //cargo: (string)CargotextBox.Text
                 ));
 
             //Cargar el detalle al Grid
@@ -132,9 +132,8 @@ namespace PrimerParcial.UI.Detalle
             {
                 grupos.AgregarDetalle(
                     ToInt(item.Cells["Id"].Value),
-                    ToInt(item.Cells["GruposId"].Value),
-                    ToInt(item.Cells["PersonasId"].Value),
-                    ToInt(item.Cells["Cantidad"].Value)
+                    ToInt(item.Cells["GrupoId"].Value),
+                    ToInt(item.Cells["PersonaId"].Value)
                   );
             }
             return grupos;
@@ -144,9 +143,9 @@ namespace PrimerParcial.UI.Detalle
         {
             IDNumericUpDown.Value = grupos.GruposId;
             FechaDateTimePicker.Value = grupos.Fecha;
-            CantidadTextBox.Text = grupos.Cantidad;
-            GruposTextBox.Text = grupos.Gruposs;
-            IntegrantesTextBox.Text = grupos.Integrantes;
+            CantidadTextBox.Text = grupos.Cantidad.ToString();
+            GruposTextBox.Text = grupos.Gruposs.ToString();
+            IntegrantesTextBox.Text = grupos.Integrantes.ToString();
             DescripcionTextBox.Text = grupos.Descripcion;
             
             DetalledataGridView.DataSource = grupos.Detalle;
@@ -174,6 +173,14 @@ namespace PrimerParcial.UI.Detalle
             }
 
             return HayErrores;
+        }
+        private int ToInt(object valor)
+        {
+            int retorno = 0;
+
+            int.TryParse(valor.ToString(), out retorno);
+
+            return retorno;
         }
     }
 }

@@ -29,9 +29,9 @@ namespace PrimerParcial.Entidades
                 this.Detalle = new List<GrupoDetalle>();
             }
 
-        public void AgregarDetalle(int id, int grupoId, int personaId, string cargo)
+        public void AgregarDetalle(int id, int grupoId, int personaId)
         {
-            this.Detalle.Add(new GrupoDetalle(id, grupoId, personaId, cargo));
+            this.Detalle.Add(new GrupoDetalle(id, grupoId, personaId));
         }
 
         }

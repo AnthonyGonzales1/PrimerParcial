@@ -237,5 +237,11 @@
         private System.Windows.Forms.DataGridView DetalledataGridView;
         private System.Windows.Forms.NumericUpDown GruposIdnumericUpDown;
         private System.Windows.Forms.Button Removerbutton;
+        private System.Windows.Forms.NumericUpDown IDNumericUpDown;
+        private System.Windows.Forms.TextBox DescripcionTextBox;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
+        private System.Windows.Forms.TextBox CantidadTextBox;
+        private System.Windows.Forms.TextBox GruposTextBox;
+        private System.Windows.Forms.TextBox IntegrantesTextBox;
     }
 }

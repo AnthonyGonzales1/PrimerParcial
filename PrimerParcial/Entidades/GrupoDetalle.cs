@@ -29,12 +29,11 @@ namespace PrimerParcial.Entidades
 
         }
 
-        public GrupoDetalle(int id, int grupoId, int personaId, string cargo) {
+        public GrupoDetalle(int id, int grupoId, int personaId) {
 
             this.Id = id;
             this.GrupoId = grupoId;
             this.PersonaId = personaId;
-            this.Cargo = cargo;
             
         }
     }
