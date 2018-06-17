@@ -19,19 +19,21 @@ namespace PrimerParcial.Entidades
             public DateTime Fecha { get; set; }
 
             public float Gruposs { get; set; }
-
+            
             public float Integrantes { get; set; }
-
+            
+            public virtual ICollection<GrupoDetalle> Detalle { get; set; }
+            
             public Grupos()
             {
-                GruposId = 0;
-                Descripcion = string.Empty;
-                Cantidad = 0;
-                Fecha = DateTime.Now;
-                Gruposs = 0;
-                Integrantes = 0;
-
+                this.Detalle = new List<GrupoDetalle>();
             }
+
+        public void AgregarDetalle(int id, int grupoId, int personaId, string cargo)
+        {
+            this.Detalle.Add(new GrupoDetalle(id, grupoId, personaId, cargo));
+        }
+
         }
     }
 

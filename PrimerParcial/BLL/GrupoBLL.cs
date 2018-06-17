@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 
 namespace PrimerParcial.BLL
 {
-    public class GrupoBLL
+    public class GrupoBLL 
     {
 
         public static bool Guardar(Grupos grupos)
@@ -39,9 +39,14 @@ namespace PrimerParcial.BLL
             Contexto contexto = new Contexto();
             try
             {
+                foreach (var item in grupos.Detalle) {
+                    var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
+                    contexto.Entry(item).State = estado;
+                }
                 contexto.Entry(grupos).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
-                {
+
+                if(contexto.SaveChanges()>0)
+                    {
                     paso = true;
                 }
                 contexto.Dispose();
@@ -79,8 +84,12 @@ namespace PrimerParcial.BLL
             try
             {
                 grupos = contexto.Grupo.Find(id);
-                contexto.Dispose();
+                grupos.Detalle.Count();
 
+                foreach (var item in grupos.Detalle) {
+                    string s = item.GrupoId.PersonaId;
+                }
+                contexto.Dispose();
             }
             catch (Exception)
             {
@@ -103,6 +112,7 @@ namespace PrimerParcial.BLL
             }
             return grupos;
         }
+        
 
     }
 }

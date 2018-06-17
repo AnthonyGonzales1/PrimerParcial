@@ -28,7 +28,15 @@ namespace PrimerParcial.BLL.Tests
         [TestMethod()]
         public void ModificarTest()
         {
-            Assert.Fail();
+            int idGrupos = GrupoBLL.GetList(x => true)[0].GruposId;
+
+            Grupos grupos = GrupoBLL.Buscar(idGrupos);
+
+            grupos.Detalle.Add(new GrupoDetalle(0, grupos.GruposId, 2, 4));
+
+            bool paso = GrupoBLL.Modificar(grupos);
+
+            Assert.AreEqual(true, paso);
         }
 
         [TestMethod()]

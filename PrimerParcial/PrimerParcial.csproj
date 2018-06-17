@@ -52,7 +52,11 @@
   <ItemGroup>
     <Compile Include="BLL\GrupoBLL.cs" />
     <Compile Include="DAL\Contexto.cs" />
+    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\Repositorio.cs" />
     <Compile Include="Entidades\Grupo.cs" />
+    <Compile Include="Entidades\GrupoDetalle.cs" />
+    <Compile Include="Entidades\Personas.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,12 +71,21 @@
     <Compile Include="UI\Consultas\Consultar.Designer.cs">
       <DependentUpon>Consultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Detalle\Detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Detalle\Detalle.Designer.cs">
+      <DependentUpon>Detalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\RegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\RegistroForm.Designer.cs">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Detalle\Detalle.resx">
+      <DependentUpon>Detalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RegistroForm.resx">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </EmbeddedResource>
